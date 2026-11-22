@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Create professional, ATS-friendly resumes with ResumePro. Build, customize, and download high-quality resumes with modern templates, live links, and powerful resume tools.">
+    <meta name="keywords"
+          content="ATS resume builder, resume builder, CV builder, ATS friendly resume, professional resume, resume templates, free resume builder">
+
+    <title>Resume Pro</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="https://unpkg.com/docx@8.5.0/build/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="../../Icons/WhatsApp%20Image%202026-09-02%20at%2010.49.47%20PM-Photoroom.png">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <a href="../Home_1page/index2.html">
+             <div class="logo">
+             <!-- <i class="fa-solid fa-file-lines"></i> -->
+                <img type="image/png" src="../../Logos/WhatsApp%20Image%202026-09-02%20at%2010.49.47%20PM.png" class="logo2" alt="Resume Pro">
+             </div>
+        </a>
+
+        <div class="items">
+            <h1 class="name1">Resume Pro</h1>
+            <span class="name2">ATS Resume Builder</span>
+        </div>
+
+    </div>
+
+    <div class="top-actions">
+
+        <button class="btn secondary" id="saveBtn">
+            <i class="fa-solid fa-floppy-disk"></i>
+            Save
+        </button>
+
+        <button class="btn secondary" id="feedbackBtn">
+            <i class="fa-solid fa-comment-dots"></i>
+            Feedback
+        </button>
+
+        <button class="btn secondary" id="jsonBtn">
+            <i class="fa-solid fa-download"></i>
+            JSON
+        </button>
+
+        <button class="btn primary" id="pdfBtn">
+            <i class="fa-solid fa-file-pdf"></i>
+            PDF
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <section class="panel-section">
+
+            <h3>
+                <i class="fa-solid fa-layer-group"></i>
+                ATS Resume Templates
+            </h3>
+
+            <p class="helper">
+                All templates use simple headings, readable typography,
+                standard sections and ATS-friendly layouts.
+            </p>
+
+            <div class="template-grid">
+
+                <button class="template-card active" data-template="google-clean">
+                    <i class="fa-brands fa-google"></i>
+                    <span>Google Clean</span>
+                </button>
+
+                <button class="template-card" data-template="compact">
+                    <i class="fa-solid fa-compress"></i>
+                    <span>Compact ATS</span>
+                </button>
+
+                <button class="template-card" data-template="technical">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Technical</span>
+                </button>
+
+                <button class="template-card" data-template="minimal">
+                    <i class="fa-solid fa-minus"></i>
+                    <span>Minimal</span>
+                </button>
+
+                <button class="template-card" data-template="classic">
+                    <i class="fa-solid fa-scroll"></i>
+                    <span>Classic</span>
+                </button>
+
+                <button class="template-card" data-template="executive">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Executive</span>
+                </button>
+
+                <button class="template-card" data-template="modern">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span>Modern ATS</span>
+                </button>
+
+                <button class="template-card" data-template="professional">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Professional</span>
+                </button>
+
+                <button class="template-card" data-template="corporate">
+                    <i class="fa-solid fa-building"></i>
+                    <span>Corporate</span>
+                </button>
+
+                <button class="template-card" data-template="engineering">
+                    <i class="fa-solid fa-gears"></i>
+                    <span>Engineering</span>
+                </button>
+
+                <button class="template-card" data-template="developer">
+                    <i class="fa-solid fa-terminal"></i>
+                    <span>Developer</span>
+                </button>
+
+                <button class="template-card" data-template="academic">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Academic</span>
+                </button>
+
+                <button class="template-card" data-template="startup">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span>Startup</span>
+                </button>
+
+                <button class="template-card" data-template="finance">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Finance</span>
+                </button>
+
+                <button class="template-card" data-template="consulting">
+                    <i class="fa-solid fa-chess"></i>
+                    <span>Consulting</span>
+                </button>
+
+                <button class="template-card" data-template="clean-pro">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    <span>Clean Pro</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERSONAL -->
+
+        <section class="panel-section">
+
+            <h3>
+                <i class="fa-solid fa-user"></i>
+                Personal Information
+            </h3>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input id="fullName" placeholder="John Smith">
+                </div>
+
+                <div class="form-group">
+                    <label>Professional Title</label>
+                    <input id="jobTitle" placeholder="Software Engineer">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input id="email" placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input id="phone" placeholder="+91 9876543210">
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label>
+                    <input id="location" placeholder="Bangalore, India">
+                </div>
+
+                <div class="form-group">
+                    <label>LinkedIn</label>
+                    <input id="linkedin" placeholder="linkedin.com/in/john">
+                </div>
+
+                <div class="form-group">
+                    <label>GitHub</label>
+                    <input id="github" placeholder="github.com/john">
+                </div>
+
+                <div class="form-group">
+                    <label>Portfolio</label>
+                    <input id="portfolio" placeholder="john.dev">
+                </div>
+
+                <div class="form-group full">
+                    <label>Professional Summary</label>
+                    <textarea id="summary" rows="5"></textarea>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section class="panel-section">
+
+            <h3>
+                <i class="fa-solid fa-bolt"></i>
+                Skills
+            </h3>
+
+            <div class="form-group">
+
+                <label>Comma separated skills</label>
+
+                <textarea
+                    id="skills"
+                    rows="4"
+                    placeholder="JavaScript, Python, React, SQL"
+                ></textarea>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPERIENCE -->
+
+        <section class="panel-section">
+
+            <div class="section-header">
+
+                <h3>
+                    <i class="fa-solid fa-briefcase"></i>
+                    Experience
+                </h3>
+
+                <button class="icon-btn" id="addExperienceBtn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+
+            </div>
+
+            <div id="experienceContainer"></div>
+
+        </section>
+
+
+        <!-- EDUCATION -->
+
+        <section class="panel-section">
+
+            <div class="section-header">
+
+                <h3>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Education
+                </h3>
+
+                <button class="icon-btn" id="addEducationBtn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+
+            </div>
+
+            <div id="educationContainer"></div>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+
+        <section class="panel-section">
+
+            <div class="section-header">
+
+                <h3>
+                    <i class="fa-solid fa-laptop-code"></i>
+                    Projects
+                </h3>
+
+                <button class="icon-btn" id="addProjectBtn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+
+            </div>
+
+            <div id="projectContainer"></div>
+
+        </section>
+
+
+        <!-- CERTIFICATIONS -->
+
+        <section class="panel-section">
+
+            <div class="section-header">
+
+                <h3>
+                    <i class="fa-solid fa-certificate"></i>
+                    Certifications
+                </h3>
+
+                <button class="icon-btn" id="addCertificationBtn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+
+            </div>
+
+            <div id="certificationContainer"></div>
+
+        </section>
+
+
+        <!-- CUSTOMIZATION -->
+
+        <section class="panel-section">
+
+            <h3>
+                <i class="fa-solid fa-palette"></i>
+                Section Customization
+            </h3>
+
+            <p class="helper">
+                Customize each section independently.
+            </p>
+
+            <div id="sectionCustomization"></div>
+
+        </section>
+
+    </aside>
+
+
+    <!-- ================= PREVIEW ================= -->
+
+    <section class="preview-area">
+
+        <div class="preview-toolbar" id="toolbar">
+
+            <h2>
+                Live Resume Preview
+            </h2>
+
+            <div class="preview-actions">
+
+                <button class="btn secondary" id="htmlBtn">
+                    <i class="fa-solid fa-code"></i>
+                    HTML
+                </button>
+
+                <button class="btn secondary" id="docxBtn">
+                    <i class="fa-solid fa-file-word"></i>
+                    DOCX
+                </button>
+
+                <button class="btn primary" id="printResume">
+                    <i class="fa-solid fa-print"></i>
+                    Print / PDF
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="resume-wrapper">
+
+            <article id="resume" class="resume google-clean">
+
+                <header class="resume-header">
+
+                    <h1 id="previewName">
+                        Your Name
+                    </h1>
+
+                    <h2 id="previewTitle">
+                        Professional Title
+                    </h2>
+
+                    <div
+                        class="contact"
+                        id="previewContact"
+                    ></div>
+
+                    <div
+                        class="social"
+                        id="previewSocial"
+                    ></div>
+
+                </header>
+
+
+                <section
+                    class="resume-section"
+                    data-section="summary"
+                >
+
+                    <h3>PROFESSIONAL SUMMARY</h3>
+
+                    <p id="previewSummary">
+                        Add your professional summary.
+                    </p>
+
+                </section>
+
+
+                <section
+                    class="resume-section"
+                    data-section="skills"
+                >
+
+                    <h3>SKILLS</h3>
+
+                    <div
+                        id="previewSkills"
+                        class="skills-list"
+                    ></div>
+
+                </section>
+
+
+                <section
+                    class="resume-section"
+                    data-section="experience"
+                >
+
+                    <h3>EXPERIENCE</h3>
+
+                    <div id="previewExperience"></div>
+
+                </section>
+
+
+                <section
+                    class="resume-section"
+                    data-section="education"
+                >
+
+                    <h3>EDUCATION</h3>
+
+                    <div id="previewEducation"></div>
+
+                </section>
+
+
+                <section
+                    class="resume-section"
+                    data-section="projects"
+                >
+
+                    <h3>PROJECTS</h3>
+
+                    <div id="previewProjects"></div>
+
+                </section>
+
+
+                <section
+                    class="resume-section"
+                    data-section="certifications"
+                >
+
+                    <h3>CERTIFICATIONS</h3>
+
+                    <div id="previewCertifications"></div>
+
+                </section>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
