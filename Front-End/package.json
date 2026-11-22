@@ -1,0 +1,20 @@
+{
+  "name": "resume-pro",
+  "version": "1.0.0",
+  "description": "Professional ATS-friendly resume builder",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "resume",
+    "builder",
+    "ATS",
+    "professional"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
