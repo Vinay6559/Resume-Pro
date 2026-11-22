@@ -70,7 +70,7 @@ Resume Pro V6
 
 **Vinay Addagatla**
 
-- GitHub: [Your GitHub Profile](https://github.com/YOUR-USERNAME)
+- GitHub: [Vinay6559](https://github.com/YOUR-USERNAME)
 - LinkedIn: [Vinay Addagatla](https://www.linkedin.com/in/vinay-addagatla/)
 
 **Resume Pro – Your career deserves a professional introduction.**
